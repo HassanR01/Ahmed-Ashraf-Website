@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
+:root {
+    --main-font:  'Cairo', sans-serif;
+    --main-color: #121857;
+    --second-color: #EFAD25;
+    --writing-color: #F5F7FA;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-font);
+    height: 200vh;
+    direction: rtl;
+    background-color: var(--main-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100px;
+}
+
+p {
+    max-width: 600px;
+}
+
+section {
+    height: 100vh;
+}
+/* Header */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    padding: 0 20px;
+}
+
+header .logo h2 {
+    font-size: 1.5rem;
+    color: var(--writing-color);
+}
+
+header .logo h2 span {
+    font-size: 2.5rem;
+    color: var(--second-color);    
+    transition: all 0.5s ease-in-out;
+}
+
+header .logo h2:hover span {
+    margin-left: 20px;
+}
+
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ;
+}
+
+header nav ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--writing-color);
+    font-size: 1.2rem;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    background-color: #EFAD25;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: -100%;
+    transition: all 0.5s;
+}
+
+header nav ul li a:hover::before {
+    left: 0;
+}
+
+header nav .bIcon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 20px;
+    transform: translate(0 , -50%);
+    display: none;
+}
+
+header nav .bIcon span {
+    height: 2px;
+    background-color: var(--writing-color);
+    margin: 5px 0;
+}
+
+header nav .bIcon span:nth-child(1) {
+    width: 15px;
+}
+header nav .bIcon span:nth-child(2) {
+    width: 30px;
+}
+header nav .bIcon span:nth-child(3) {
+    width: 15px;
+}
+
+@media (max-width: 767px) {
+    header nav .bIcon {
+        display: flex;
+    }
+    
+    header nav ul{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        left: 0;
+        top: 75px;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    
+    header nav ul.active {
+        height: 340px;
+    }
+
+    header nav ul li{
+        width: 100%;
+    }
+
+    header nav ul li a {
+        padding: 10px 0;
+        width: 100%;
+        font-weight: bold;
+    }
+}
+
+/* Home Section */
+
+#Home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    color: var(--writing-color);
+    overflow: hidden;
+}
+
+#Home .image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+#Home .image img {
+    width: 400px;
+}
+
+#Home .image svg {
+    position: absolute;
+    z-index: -1;
+}
+
+#Home .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#Home .text h3 {
+    font-size: 1.8rem;
+}
+#Home .text h1 {
+    font-size: 3rem;
+}
+#Home .text h2 {
+    font-size: 2.5rem;
+}
+#Home .text p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    max-width: 600px;
+    text-align: right;
+}
+#Home .text .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#Home .text .buttons a {
+    background-color: #EFAD25;
+    padding: 10px 30px;
+    margin: 0 0 0 10px;
+    color: var(--main-color);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 1180px) {
+    
+}
+
+
+
+/* About Me Sectoin */
+#aboutme {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100vh;
+}
+
+#aboutme .image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#aboutme .image img {
+    width: 450px;
+    border-radius: 10px;
+    /* visibility: hidden; */
+}
+
+#aboutme .image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 15px;
+    top: 15px;
+    border: solid 4px var(--second-color);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+#aboutme .image::after {
+    content: 'أحمد أشرف';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50% , 0);
+    padding: 10px;
+    background-color: var(--main-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--second-color);
+    width: 60%;
+}
+
+#aboutme .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#aboutme .text h2 {
+    font-size: 2rem;
+    color: var(--writing-color);
+}
+
+#aboutme .text h2:nth-child(2) {
+    font-size: 2rem;
+    color: var(--second-color);
+}
+
+#aboutme .text p {
+    font-size: 1.2rem;
+    color: var(--writing-color);
+}
+
+#aboutme .text ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#aboutme .text ul li {
+    padding: 0 20px 0 0;
+    font-size: 1.1rem;
+    color: var(--writing-color);
+    position: relative;
+}
+
+#aboutme .text ul li::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50px;
+    border: solid 3px var(--second-color);
+    right: 0;
+    top: 50%;
+    transform: translate(0 , -50%);
+}
+
+#aboutme .text .links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#aboutme .text .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    margin: 0 0 0 20px;
+}
+
+#aboutme .text .links a img {
+    width: 50px;
+    padding: 10px;
+    background-color: var(--writing-color);
+    border-radius: 50px;
+    margin: 0 0 0  10px;
+}
+
+#aboutme .text .links a .text{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#aboutme .text .links a .text p{
+    color: var(--main-color);
+    font-size: 1rem;
+    font-weight: bold;
+    direction: ltr;
+}
+
+@media (max-width: 1180px) {
+    
+}
+
+
+
+/* My Skills Section */
+#skills {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#skills h2 {
+    font-size: 2rem;
+    color: var(--writing-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#skills p {
+    font-size: 1.2rem;
+    color: var(--writing-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#skills .skillsSpreading {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#skills .skillsSpreading .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px;
+    background-color: #070a30;
+    border-radius: 10px;
+    max-width: 800px;
+    min-width: 500px;
+    width: calc(100%/2);
+    margin: 40px 20px;
+}
+
+#skills .skillsSpreading .skills .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#skills .skillsSpreading .skills h4 {
+    color: var(--writing-color);
+    margin: 10px 0;
+
+}
+
+#skills .skillsSpreading .skills .skill .rate {
+    width: 100%;
+    height: 10px;
+    background-color: var(--writing-color);
+    border-radius: 10px;
+    position: relative;
+}
+
+#skills .skillsSpreading .skills .skill .rate::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--second-color);
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(1) .rate::before {
+    width: 80%;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(2) .rate::before {
+    width: 90%;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(3) .rate::before {
+    width: 50%;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(4) .rate::before {
+    width: 75%;
+}
+
+#skills .skillsSpreading .skills .skill .rate::after {
+    position: absolute;
+    top: -40px;
+    color: var(--writing-color);
+    font-weight: bold;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(1) .rate::after {
+    content: '80%';
+    right: 77%;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(2) .rate::after {
+    content: '90%';
+    right: 87%;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(3) .rate::after {
+    content: '50%';
+    right: 47%;
+}
+
+#skills .skillsSpreading .skills .skill:nth-child(4) .rate::after {
+    content: '75%';
+    right: 72%;
+}
+
+#skills .skillsSpreading .spreading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(60%/2);
+}
+
+#skills .skillsSpreading .spreading .item {
+    min-width: 300px;
+    background-color: var(--writing-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#skills .skillsSpreading .spreading .item h4 {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1180px) {
+    
+}
+
