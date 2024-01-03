@@ -18,7 +18,6 @@ html {
 
 body {
     font-family: var(--main-font);
-    height: 200vh;
     direction: rtl;
     color: var(--writing-color);
     background-color: var(--main-color);
@@ -307,10 +306,29 @@ header nav .bIcon span:nth-child(3) {
     #Home .text .buttons a {
         font-size: 1.2rem;
     }
+
+    #Home .text .buttons a {
+        background-color: #EFAD25;
+        padding: 10px 30px;
+        margin: 0 5px;
+    }
 }
 
 @media (max-width: 780px) {
+    #Home {
+        height: auto;
+    }
+
+    #Home .image img {
+        width: 300px;
+    }
     
+    #Home .image svg {
+        width: 500px;
+        position: absolute;
+        z-index: -1;
+    }
+
     #Home .text h3 {
         font-size: 1.1rem;
     }
@@ -477,7 +495,7 @@ header nav .bIcon span:nth-child(3) {
 
 @media (max-width: 1180px) {
     #aboutme {
-        padding: 100px 10px 0;
+        padding: 100px 10px 50px;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -517,6 +535,10 @@ header nav .bIcon span:nth-child(3) {
         margin:10px;
     }
 
+    #aboutme .text .links a {
+        margin: 10px 5px;
+    }
+
     #aboutme .text .links a .text p {
         font-size: 0.9rem;
     }
@@ -528,7 +550,7 @@ header nav .bIcon span:nth-child(3) {
 
 @media (max-width: 780px) {
     #aboutme {
-        height: 100vh;        
+        height: auto;        
     }
 
     #aboutme .image {
@@ -536,7 +558,7 @@ header nav .bIcon span:nth-child(3) {
     }
 
     #aboutme .image img {
-        width: 300px;
+        width: 250px;
     }
 
     #aboutme .image::after {
@@ -565,7 +587,7 @@ header nav .bIcon span:nth-child(3) {
     }
 
     #aboutme .text .links a .text p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     #aboutme .text .links a img {
         width: 30px;
@@ -706,7 +728,6 @@ header nav .bIcon span:nth-child(3) {
     align-items: center;
     justify-content: center;
     width: calc(60%/2);
-    min-width: 400px;
 }
 
 #skills .skillsSpreading .spreading .item {
@@ -734,21 +755,24 @@ header nav .bIcon span:nth-child(3) {
 
     #skills .skillsSpreading .skills {
         width: 100%;
-        min-width:auto;
+        min-width: auto;
     }
 
     #skills .skillsSpreading .spreading {
         width: 100%;
+        min-width: auto;
     }
 
     #skills .skillsSpreading .spreading .item {
         width: 80%;
+
     }
+    
 }
 
 /* Services Section */
 #services {
-    padding: 100px 0 0 0;
+    padding: 100px 10px;
 }
 
 #services .services {
@@ -798,7 +822,7 @@ header nav .bIcon span:nth-child(3) {
 
 /* Testimonials section */
 #testimonials {
-    padding: 100px 0 0 0; 
+    padding: 100px 10px; 
 }
 
 #testimonials .testimonialContainer {
@@ -855,7 +879,7 @@ header nav .bIcon span:nth-child(3) {
 
 /* Events Section */
 #events {
-    padding: 100px 0 ;
+    padding: 100px 10px ;
 }
 
 #events .eventsContainer {
@@ -941,6 +965,10 @@ header nav .bIcon span:nth-child(3) {
 @media (max-width: 1180px) {
     #events {
         height: auto;
+    }
+
+    #events .eventsContainer .event {
+        margin: 50px 0;
     }
 }
 
